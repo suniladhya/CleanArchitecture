@@ -52,5 +52,22 @@ dotnet ef migrations add initialcreate --context UniversityDBContext -p .\..\Cle
 dotnet ef database update
 dotnet ef database update --context UniversityDBContext -p .\..\CleanArch.Infra\Data\CleanArch.Infra.Data.csproj
 
+dotnet new classlib -n CleanArch.Application -o CleanArch.Application
+
+dotnet sln add .\CleanArch.Application\CleanArch.Application.csproj -s Application
+
+dotnet new classlib -n CleanArch.Infra.IoC -o CleanArch.Infra/IoC
+dotnet sln add .\CleanArch.Infra\Ioc\CleanArch.Infra.IoC.csproj -s Infra.IoC
+
+Install package in Infra.IoC
+dotnet add package Microsoft.Extensions.DependencyInjection --version 5.0.1
+create class with static Method : RegisterServices(IServiceCollection serviceCollection){}
+
+create a method in startup class: private static void RegisterServices(IServiceCollection services)
+in configure service Method: RegisterServices(services)
+
+
+
+
 
 

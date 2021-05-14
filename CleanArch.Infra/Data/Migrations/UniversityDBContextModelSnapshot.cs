@@ -43,18 +43,21 @@ namespace CleanArch.Infra.Data.Migrations
                         {
                             Id = 1,
                             Description = "Study about Social Science",
+                            ImageUrl = "/images/art-ball-shaped-circle-414860.jpg",
                             Name = "Social Science"
                         },
                         new
                         {
                             Id = 2,
                             Description = "Study about Moral behavior in Society",
+                            ImageUrl = "/images/blue-bubble-crystal-clear-132477.jpg",
                             Name = "Moral Science"
                         },
                         new
                         {
                             Id = 3,
                             Description = "Study about behavior in Society",
+                            ImageUrl = "/images/book-education-graphing-paper-167682.jpg",
                             Name = "Behavior Science"
                         });
                 });

@@ -66,8 +66,17 @@ create class with static Method : RegisterServices(IServiceCollection serviceCol
 create a method in startup class: private static void RegisterServices(IServiceCollection services)
 in configure service Method: RegisterServices(services)
 
+Add data to the Database using the context class
+```protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Course>().HasData(
+            new Course
+```
 
+c:\Users\sadhya\Documents\Project\CleanArchitecture\CleanArch.UI.Mvc>
+dotnet ef migrations add seedDataToCourse --context UniversityDBContext -p .\..\CleanArch.Infra\Data\CleanArch.Infra.Data.csproj
 
+dotnet ef database update --context UniversityDBContext -p .\..\CleanArch.Infra\Data\CleanArch.Infra.Data.csproj
 
 
 

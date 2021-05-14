@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArch.Infra.Data.Migrations
 {
     [DbContext(typeof(UniversityDBContext))]
-    [Migration("20210512212707_initialcreate")]
-    partial class initialcreate
+    [Migration("20210514110525_CourseDataAdded")]
+    partial class CourseDataAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,29 @@ namespace CleanArch.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Study about Social Science",
+                            ImageUrl = "/images/art-ball-shaped-circle-414860.jpg",
+                            Name = "Social Science"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Study about Moral behavior in Society",
+                            ImageUrl = "/images/blue-bubble-crystal-clear-132477.jpg",
+                            Name = "Moral Science"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Study about behavior in Society",
+                            ImageUrl = "/images/book-education-graphing-paper-167682.jpg",
+                            Name = "Behavior Science"
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -31,5 +31,16 @@ namespace CleanArch.Infra.Data.Repositories
             return await query.ToListAsync();
         }
 
+        public void Add<T>(T entity) where T : class
+        {
+            _context.Add(entity);
+            _context.SaveChanges();
+        }
+        public async Task<bool> SaveChangesAsync()
+        {
+
+            // Only return success if at least one row was changed
+            return (await _context.SaveChangesAsync()) > 0;
+        }
     }
 }

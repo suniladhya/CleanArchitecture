@@ -11,5 +11,7 @@ namespace CleanArch.Domain.Interfaces
     {
         IEnumerable<Course> GetCourses();
         Task<IEnumerable<Course>> GetCoursesAsync();
+        void Add<T>(T entity) where T : class;
+        Task<bool> SaveChangesAsync();
     }
 }

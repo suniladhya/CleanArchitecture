@@ -78,5 +78,13 @@ dotnet ef migrations add seedDataToCourse --context UniversityDBContext -p .\..\
 
 dotnet ef database update --context UniversityDBContext -p .\..\CleanArch.Infra\Data\CleanArch.Infra.Data.csproj
 
+dotnet new classlib -n cleanArch.Infra.Bus -o .\CleanArch.Infra\Bus
+
+dotnet sln add .\CleanArch.Infra\Bus\cleanArch.Infra.Bus.csproj -s Infra.Bus
+
+
+C:\Users\sadhya\Documents\Project\CleanArchitecture\CleanArch.Infra\Bus>
+dotnet add package MediatR --version 9.0.0
+
 
 
